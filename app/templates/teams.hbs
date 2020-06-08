@@ -1,7 +1,7 @@
 <h2>Teams:</h2>
 
-<Team @name="Alexs' Team" />
-<Team @name="Ben's Team" />
-<Team @name="Sophie's Team" />
+{{#each (range 1 5) as |number|}}
+  <Team @name=(concat "Team #" number) />
+{{/each}}
 
 {{outlet}}
