@@ -22,13 +22,13 @@ module.exports = function (defaults) {
 
   const { Webpack } = require("@embroider/webpack");
   return require("@embroider/compat").compatBuild(app, Webpack, {
-    staticAddonTestSupportTrees: true,
-    staticAddonTrees: true,
-    staticHelpers: true,
-    staticComponents: true,
-    packagerOptions: {
-      webpackConfig: {},
-    },
-    splitAtRoutes: ["teams", "players", "table"],
+    // staticAddonTestSupportTrees: true,
+    // staticAddonTrees: true,
+    // staticHelpers: true,
+    // staticComponents: true,
+    // packagerOptions: {
+    //   webpackConfig: {},
+    // },
+    // splitAtRoutes: ["teams", "players", "table"],
   });
 };
