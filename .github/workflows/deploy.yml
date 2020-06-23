@@ -34,4 +34,4 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Deploy to surge
-      run: yarn deploy -t $
+      run: yarn deploy --token ${{ secrets.SURGE_TOKEN }}
