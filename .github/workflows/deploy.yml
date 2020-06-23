@@ -6,9 +6,13 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master, ember-cli-surge ]
+    branches: 
+     - master
+     - ember-cli-surge
   pull_request:
-    branches: [ master, ember-cli-surge ]
+    branches: 
+    - master
+    - ember-cli-surge
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,9 +23,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout Code
     - uses: actions/checkout@v2
+    - name: Install Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 12
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
 
     # Runs a single command using the runners shell
     - name: Deploy to surge
-      run: yarn deploy -t $SURGE_TOKEN
+      run: yarn deploy -t $
